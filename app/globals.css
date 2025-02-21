@@ -1,0 +1,808 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* AlarmSection 스타일 */
+#cctv-alarm {
+  padding: 80px 0;
+  background: #fff;
+}
+
+#cctv-alarm .alarm-news {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#cctv-alarm .tit {
+  margin-bottom: 60px;
+}
+
+#cctv-alarm .tit h4 {
+  color: #ff4d4f;
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+#cctv-alarm .tit h3 {
+  font-size: 32px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+#cctv-alarm .crime-stat {
+  color: #ff4d4f;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#cctv-alarm .main-message {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+#cctv-alarm .text-blue {
+  color: #1890ff;
+}
+
+#cctv-alarm .warning-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+#cctv-alarm .warning-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff4d4f;
+  margin-bottom: 12px;
+}
+
+#cctv-alarm .warning-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+#cctv-alarm .warning-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#cctv-alarm .warning-list li {
+  text-align: center;
+}
+
+#cctv-alarm .warning-icon {
+  color: #ff4d4f;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+#cctv-alarm .warning-text h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+#cctv-alarm .warning-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* PackageSection 스타일 */
+#cctv-package {
+  padding: 80px 0;
+  background: #fff;
+}
+
+#cctv-package .promotion-banner {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  color: #fff;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#cctv-package .promo-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#cctv-package .highlight-tag {
+  background: #ff4d4f;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+#cctv-package .promo-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#cctv-package .mobile-only {
+  display: none;
+}
+
+#cctv-package .promo-deadline {
+  margin-top: 12px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+#cctv-package .highlight-text {
+  color: #ffd666;
+  font-weight: 700;
+}
+
+#cctv-package .premium-service {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#cctv-package .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+#cctv-package .highlight {
+  color: #1890ff;
+}
+
+#cctv-package .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+#cctv-package .benefit-item {
+  text-align: center;
+}
+
+#cctv-package .benefit-image {
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#cctv-package .benefit-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+#cctv-package .benefit-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* PackageSection 모바일 스타일 */
+@media (max-width: 768px) {
+  #cctv-package {
+    padding: 40px 0;
+  }
+
+  #cctv-package .promotion-banner {
+    padding: 24px 20px;
+    margin-bottom: 40px;
+  }
+
+  #cctv-package .highlight-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  #cctv-package .promo-text {
+    font-size: 18px;
+  }
+
+  #cctv-package .mobile-only {
+    display: block;
+    margin: 8px 0;
+  }
+
+  #cctv-package .promo-deadline {
+    font-size: 14px;
+  }
+
+  #cctv-package .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  #cctv-package .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #cctv-package .benefit-image {
+    margin-bottom: 20px;
+  }
+
+  #cctv-package .benefit-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  #cctv-package .benefit-content p {
+    font-size: 14px;
+  }
+}
+
+/* ReviewSection 스타일 */
+#cctv-review {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+#cctv-review .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#cctv-review .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+#cctv-review .highlight {
+  color: #1890ff;
+}
+
+#cctv-review .review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#cctv-review .review-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#cctv-review .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+#cctv-review .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#cctv-review .user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#cctv-review .username {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+#cctv-review .rating {
+  display: flex;
+  gap: 2px;
+}
+
+#cctv-review .review-date {
+  font-size: 14px;
+  color: #999;
+}
+
+#cctv-review .review-content {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ReviewSection 모바일 스타일 */
+@media (max-width: 768px) {
+  #cctv-review {
+    padding: 40px 0;
+  }
+
+  #cctv-review .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  #cctv-review .review-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #cctv-review .review-item {
+    padding: 20px;
+  }
+
+  #cctv-review .username {
+    font-size: 14px;
+  }
+
+  #cctv-review .review-date {
+    font-size: 12px;
+  }
+
+  #cctv-review .review-content {
+    font-size: 14px;
+  }
+}
+
+/* BrandSection 스타일 */
+#cctv-brand {
+  padding: 80px 0;
+  background: #fff;
+}
+
+#cctv-brand .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#cctv-brand .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+#cctv-brand .highlight {
+  color: #1890ff;
+}
+
+#cctv-brand .brand-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+#cctv-brand .brand-item {
+  text-align: center;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#cctv-brand .brand-item:hover {
+  transform: translateY(-8px);
+}
+
+#cctv-brand .brand-logo {
+  margin-bottom: 24px;
+}
+
+#cctv-brand .brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+#cctv-brand .brand-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* BrandSection 모바일 스타일 */
+@media (max-width: 768px) {
+  #cctv-brand {
+    padding: 40px 0;
+  }
+
+  #cctv-brand .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  #cctv-brand .brand-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #cctv-brand .brand-item {
+    padding: 24px;
+  }
+
+  #cctv-brand .brand-name {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  #cctv-brand .brand-description {
+    font-size: 14px;
+  }
+}
+
+/* 모바일 스타일 */
+@media (max-width: 768px) {
+  #cctv-alarm {
+    padding: 40px 20px;
+  }
+
+  #cctv-alarm .tit h4 {
+    font-size: 16px;
+  }
+
+  #cctv-alarm .tit h3 {
+    font-size: 24px;
+  }
+
+  #cctv-alarm .crime-stat {
+    font-size: 20px;
+  }
+
+  #cctv-alarm .main-message {
+    font-size: 24px;
+  }
+
+  #cctv-alarm .warning-box {
+    padding: 24px;
+  }
+
+  #cctv-alarm .warning-title {
+    font-size: 20px;
+  }
+
+  #cctv-alarm .warning-subtitle {
+    font-size: 16px;
+  }
+
+  #cctv-alarm .warning-list {
+    grid-template-columns: 1fr;
+  }
+
+  #cctv-alarm .warning-icon {
+    font-size: 24px;
+  }
+
+  #cctv-alarm .warning-text h4 {
+    font-size: 18px;
+  }
+
+  #cctv-alarm .warning-text p {
+    font-size: 14px;
+  }
+}
+
+/* 모바일 최적화 스타일 */
+@media (max-width: 768px) {
+  /* Banner 섹션 */
+  #cctv-banner .img-bx {
+    height: 60vh !important;
+  }
+
+  /* Package 섹션 */
+  #cctv-package {
+    padding: 40px 20px;
+  }
+
+  #cctv-package .promotion-banner {
+    padding: 20px;
+  }
+
+  #cctv-package .promo-tag {
+    font-size: 16px;
+  }
+
+  #cctv-package .promo-deadline {
+    font-size: 14px;
+  }
+
+  #cctv-package .section-title {
+    font-size: 24px;
+    margin: 32px 0;
+  }
+
+  #cctv-package .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Review 섹션 */
+  #cctv-review {
+    padding: 40px 20px;
+  }
+
+  #cctv-review .section-title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  #cctv-review .review-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  #cctv-review .review-item {
+    padding: 16px;
+  }
+
+  #cctv-review .review-header {
+    margin-bottom: 12px;
+  }
+
+  #cctv-review .username {
+    font-size: 16px;
+  }
+
+  #cctv-review .rating {
+    font-size: 14px;
+  }
+
+  /* Brand 섹션 */
+  #cctv-brand {
+    padding: 40px 20px;
+  }
+
+  #cctv-brand .section-title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  #cctv-brand .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  #cctv-brand .brand-item {
+    padding: 16px;
+  }
+
+  #cctv-brand .brand-logo {
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  #cctv-brand .brand-name {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  #cctv-brand .brand-description {
+    font-size: 14px;
+  }
+
+  /* 공통 컨테이너 */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* 공통 그리드 */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* FAQSection 스타일 */
+#cctv-faq {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+#cctv-faq .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#cctv-faq .section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.4;
+}
+
+#cctv-faq .highlight {
+  color: #1890ff;
+}
+
+#cctv-faq .faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#cctv-faq .faq-item {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#cctv-faq .faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#cctv-faq .question {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+#cctv-faq .question .icon {
+  color: #1890ff;
+  font-size: 24px;
+}
+
+#cctv-faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f8f9fa;
+}
+
+#cctv-faq .faq-item.active .answer {
+  max-height: 500px;
+}
+
+#cctv-faq .answer p {
+  padding: 24px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* FAQSection 모바일 스타일 */
+@media (max-width: 768px) {
+  #cctv-faq {
+    padding: 40px 0;
+  }
+
+  #cctv-faq .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  #cctv-faq .question {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  #cctv-faq .question .icon {
+    font-size: 20px;
+  }
+
+  #cctv-faq .answer p {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
